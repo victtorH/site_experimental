@@ -13,7 +13,7 @@ btn.addEventListener("click",clique)
       tx.style.color = "orange"
   }
 function voltou(){
-  titulo.style = " color:transparent;-webkit-text-stroke: 1px white;font-size: 3.5em; "
+  titulo.style = " color:transparent;-webkit-text-stroke: 1px white;font-size: 3.5em ; "
 }
 function entrou(){
   passou.apply()
