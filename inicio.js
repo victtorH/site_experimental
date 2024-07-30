@@ -1,45 +1,43 @@
 // header
-var navbar = document.getElementById("nav-bar")
-const ul = document.querySelector("ul.ul")
-const al = document.querySelectorAll('a')
+const tudo = document.getElementById('tudo')
+const nav = document.querySelector('.respo')
+const ul = document.querySelector('.ul')
 const btn = document.getElementById('pesquisa')
 const graf = document.querySelector('div.graf')
 var int = document.getElementById('int')
 const rol = document.querySelector('div.rol')
+var anime = document.querySelectorAll('[data-anime]')
 const aqui = 4
-navbar.addEventListener("mouseenter", entrou)
-navbar.addEventListener('mouseleave', saiu)
-pesquisa.addEventListener('mouseenter', veio)
-pesquisa.addEventListener('mouseleave', foi)
-int.addEventListener('click',clike)
-
-
-function entrou() {
-  
-    ul.style = "background:black;"
-    btn.style = "background:black; color:black;"
-}
-function saiu() {
-    for (let con = 0; con < aqui; con++) {
-        al[con].style = " color:rgb(194, 194, 194); "
-    }
-
-    ul.style = "background:rgba(0, 0, 0, 0.843);"
-    pesquisa.style = "background:rgba(0, 0, 0, 0.843); colo:black;"
-}
-function veio() {
-    pesquisa.style = "background-color: orange; boder:4px;"
-}
-function foi() {
-    pesquisa.style = "background-color:black; border: 1px ;"
-}
-let contador = 0
-let conta = 1
-function clike( ){
+ window.addEventListener('scroll', ( ) => {
+ const windowof = window.pageYOffset
+anime.forEach( Element => {   
     
+if(windowof > Element.offsetTop - 500  ){
+        Element.classList.add('entrou')
+ 
+}else{
+    Element.classList.remove('entrou')
+}
+})})
+
+function movimento(valor,a,b) {
+        valor.addEventListener('mouseenter',a)
+        valor.addEventListener('mouseleave',b)
+}
+function click(clickando,a) {
+    clickando.addEventListener('click',a)
+}
+
+
+click(tudo,puxando)
+
+  let contador = 0
+    let conta = 1
+function apertou( ){
+  
     if( conta > contador ){ 
-        graf.style = 'transform: rotateZ(360deg); border: 10px solid #5D1CE6;border-bottom-color: #1BE539;border-left-color: #E6841C;margin-left: 295px;' 
-        rol.style = 'justify-content: left; border: 2px solid #5D1CE6;'
+        graf.style = 'transform: rotateZ(360deg); border: 10px solid #5D1CE6;border-bottom-color: #1BE539;border-left-color: #E6841C; margin-left:80%;' 
+        rol.style = ' border: 2px solid #5D1CE6;'
         int.style = 'background-color:#5D1CE6;transition:5s;'
         contador++
     }else{
@@ -50,4 +48,22 @@ function clike( ){
     }
   
 }
- 
+function puxando(){
+     if(conta > contador){
+
+ tudo.style = 'right:-0.5em;width:100%;height:100vh; background-color: #0000008b;'
+   ul.style = 'position: relative; right:-17em;'
+   nav.style = 'position: relative; right:-16.9em;'
+    contador++
+
+
+  
+    }else{
+        tudo.style='right:-7.5em;background-color: transparent;'
+        ul.style = 'position:static;'
+        nav.style = 'position:static;'
+        conta++
+    }
+
+ }
+
