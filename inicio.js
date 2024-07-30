@@ -51,7 +51,7 @@ function apertou( ){
 function puxando(){
      if(conta > contador){
 
- tudo.style = 'right:-0.5em;width:100%;height:100vh; background-color: #0000008b;'
+ tudo.style = 'right:-0.5em;width:100%;height:100vh; background-color: #0000008b; top:0; left:0;'
    ul.style = 'position: relative; right:-17em;'
    nav.style = 'position: relative; right:-16.9em;'
     contador++
